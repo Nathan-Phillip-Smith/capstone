@@ -1,16 +1,25 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './routes/Home';
-import Login from './routes/Login';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
+  const [backendData, setBackendData] = useState([{}]);
+
+  useEffect(() => {
+    fetch('/api')
+      .then((response) => response.json())
+      .then((data) => {
+        setBackendData(data);
+      });
+  }, []);
+
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Routes>
-        <Route exact path="/" Component={Home} />
-        <Route path="/login" Component={Login}></Route>
-      </Routes>
-    </BrowserRouter>
+    <div>
+      {typeof backendData[0].name === 'undefined' ? (
+        <p>Loading...</p>
+      ) : (
+        backendData.map((student, i) => <p key={i}>{student.name}</p>)
+      )}
+    </div>
   );
 }
 
