@@ -9,7 +9,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.resolve(__dirname, '../client/dist')));
 
 const mongoose = require('mongoose');
-const dbURL = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@${process.env.CLUSTER}.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
+const dbURL = 'mongodb://127.0.0.1:27017/capstoneProject';
+// const dbURL = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@${process.env.CLUSTER}.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
 mongoose.connect(dbURL);
 const udb = mongoose.connection;
 udb.on('error', console.error.bind(console, 'connection error:'));
