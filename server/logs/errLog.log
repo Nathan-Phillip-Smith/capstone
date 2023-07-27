@@ -1,0 +1,21 @@
+20230721	10:54:03	85c34fe2-e355-41e6-87ad-0852f84d01fb	Error: Not allowed by CORS	OPTIONS	/	https://www.google.com
+20230721	10:54:03	834f00ff-2bbb-4bc0-b06b-c574cfd20774	Error: Not allowed by CORS	GET	/	https://www.google.com
+20230722	10:25:46	c0ea5d09-9224-4a2f-8c2b-ce824d054b45	SyntaxError: Unexpected token } in JSON at position 57	POST	/users	undefined
+20230724	09:17:57	d1fc25c9-7550-41cc-a8ee-472a166dd489	ReferenceError: boolean is not defined	PATCH	/users	undefined
+20230724	09:18:27	020103e1-f129-44a8-8108-38752d604457	ReferenceError: boolean is not defined	PATCH	/users	undefined
+20230724	09:18:27	f13c4581-2489-498e-968b-6fa406875f0e	ReferenceError: boolean is not defined	PATCH	/users	undefined
+20230724	09:20:38	d3078207-6782-40f3-a2f0-e75029f02dd8	ReferenceError: boolean is not defined	PATCH	/users	undefined
+20230724	09:20:51	5e11ec74-9320-4623-9a3a-dcdd1fd1dce3	ReferenceError: boolean is not defined	PATCH	/users	undefined
+20230724	09:20:52	7d4c450f-996f-4b97-94d9-9981f9c2a14d	ReferenceError: boolean is not defined	PATCH	/users	undefined
+20230724	09:21:00	1fef2070-b09d-46dd-a920-f54119754f1d	SyntaxError: Unexpected token } in JSON at position 139	PATCH	/users	undefined
+20230724	09:21:03	2e65717a-afdd-4a0f-b8b8-801ca19917d3	ReferenceError: boolean is not defined	PATCH	/users	undefined
+20230724	09:22:15	18048e5c-c9f5-40dc-ad30-6eba33fdc0c5	SyntaxError: Unexpected token , in JSON at position 147	PATCH	/users	undefined
+20230724	09:22:22	a1124c23-4a95-4871-8031-33ae466c7fea	ReferenceError: boolean is not defined	PATCH	/users	undefined
+20230724	09:24:01	7d674130-5941-4bca-b7bd-ecccaf38fed7	ReferenceError: boolean is not defined	PATCH	/users	undefined
+20230724	09:25:13	35decc2c-f364-4ad3-b943-d6ccd81543fd	CastError: Cast to ObjectId failed for value "64bc028a2c9e62620ba813dg" (type string) at path "_id" for model "User"	PATCH	/users	undefined
+20230727	09:36:16	0a75f537-60c8-49c7-97a6-95a1acca3f5a	Error: Not allowed by CORS	GET	/users	http://localhost:5173
+20230727	09:37:52	c1290802-111b-4feb-8e01-f9d0e071e286	Error: Not allowed by CORS	GET	/users	http://localhost:5173
+20230727	09:37:53	1bd150cc-350d-425d-b0f8-f0d07a3a92ba	Error: Not allowed by CORS	GET	/users	http://localhost:5173
+20230727	09:37:54	83b1dc6f-0aa3-427c-82cb-760f1eed647c	Error: Not allowed by CORS	GET	/users	http://localhost:5173
+20230727	09:37:55	3a4c5774-a29f-42d8-b354-a6424a2d5f02	Error: Not allowed by CORS	GET	/users	http://localhost:5173
+20230727	09:38:09	0381e265-321e-47d6-ab4a-eade33d2e8cd	Error: Not allowed by CORS	GET	/users	http://localhost:5173
