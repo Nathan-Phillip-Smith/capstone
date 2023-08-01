@@ -19,3 +19,6 @@
 20230727	09:37:54	83b1dc6f-0aa3-427c-82cb-760f1eed647c	Error: Not allowed by CORS	GET	/users	http://localhost:5173
 20230727	09:37:55	3a4c5774-a29f-42d8-b354-a6424a2d5f02	Error: Not allowed by CORS	GET	/users	http://localhost:5173
 20230727	09:38:09	0381e265-321e-47d6-ab4a-eade33d2e8cd	Error: Not allowed by CORS	GET	/users	http://localhost:5173
+20230731	09:55:23	0bfe735b-af73-450b-9025-da493ded262a	SyntaxError: Unexpected token } in JSON at position 241	PATCH	/users	undefined
+20230731	10:39:53	be0ab586-4e55-4f70-b61c-019bc6c9598c	ReferenceError: id is not defined	PATCH	/users	undefined
+20230731	10:40:10	2b342d36-abab-41bd-885e-de0632ed06ae	ReferenceError: id is not defined	PATCH	/users	undefined
