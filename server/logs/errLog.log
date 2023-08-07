@@ -22,3 +22,4 @@
 20230731	09:55:23	0bfe735b-af73-450b-9025-da493ded262a	SyntaxError: Unexpected token } in JSON at position 241	PATCH	/users	undefined
 20230731	10:39:53	be0ab586-4e55-4f70-b61c-019bc6c9598c	ReferenceError: id is not defined	PATCH	/users	undefined
 20230731	10:40:10	2b342d36-abab-41bd-885e-de0632ed06ae	ReferenceError: id is not defined	PATCH	/users	undefined
+20230805	18:23:50	8266122f-7f5a-4fb8-966e-3d0a56cf8d20	ReferenceError: isAdmin is not defined	POST	/users	http://localhost:5173

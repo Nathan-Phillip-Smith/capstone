@@ -18,16 +18,8 @@ const getAllUsers = asyncHandler(async (req, res) => {
 // @route POST /users
 // @access Private
 const createNewUser = asyncHandler(async (req, res) => {
-  const {
-    username,
-    email,
-    firstName,
-    lastName,
-    phone,
-    address,
-    password,
-    isAdmin,
-  } = req.body
+  const { firstName, lastName, email, phone, address, username, password } =
+    req.body
 
   //confirm data
   if (
@@ -37,8 +29,7 @@ const createNewUser = asyncHandler(async (req, res) => {
     !firstName ||
     !lastName ||
     !phone ||
-    !address ||
-    typeof isAdmin !== 'boolean'
+    !address
   ) {
     return res.status(400).json({ message: 'All fields are required' })
   }
@@ -61,7 +52,6 @@ const createNewUser = asyncHandler(async (req, res) => {
     lastName,
     phone,
     address,
-    isAdmin,
   }
 
   //   create and store new user

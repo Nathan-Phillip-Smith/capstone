@@ -11,11 +11,28 @@ const connectDB = require('./config/dbConn')
 const mongoose = require('mongoose')
 const { logEvents } = require('./middleware/logger')
 const port = process.env.PORT || 3500
+const passport = require('passport')
+const session = require('express-session')
+const initializePassport = require('./config/passport-config')
+initializePassport(
+  passport,
+  (email) => users.find((user) => user.email === email),
+  (username) => users.find((user) => user.username === username)
+)
 
 console.log(process.env.NODE_ENV)
 
 connectDB()
 
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+)
+app.use(passport.initialize())
+app.use(passport.session())
 app.use(logger)
 app.use(cors(corsOptions))
 app.use(express.json())
