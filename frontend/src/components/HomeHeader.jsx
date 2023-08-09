@@ -4,8 +4,7 @@ const HomeHeader = () => {
   const { pathname } = useLocation()
   const navigate = useNavigate()
   const onRegisterClicked = () => navigate('/register')
-  const onStudentLoginClicked = () => navigate('/student-login')
-  const onAdminLoginClicked = () => navigate('/admin-login')
+  const onStudentLoginClicked = () => navigate('/login')
   const onHomeClicked = () => navigate('/')
 
   let buttons = null
@@ -25,13 +24,6 @@ const HomeHeader = () => {
           onClick={onStudentLoginClicked}
         >
           Student Login
-        </button>
-        <button
-          className="home-header__button"
-          title="AdminLogin"
-          onClick={onAdminLoginClicked}
-        >
-          Admin Login
         </button>
       </>
     )

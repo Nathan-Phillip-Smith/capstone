@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 import HomeHeader from '../../components/HomeHeader'
 import HomeFooter from '../../components/HomeFooter'
 
@@ -73,43 +74,31 @@ const Register = () => {
 
   const onRegisterUserClicked = async (e) => {
     e.preventDefault()
+    const userObject = {
+      firstName,
+      lastName,
+      email,
+      phone,
+      address,
+      username,
+      password,
+    }
     if (canRegister) {
-      try {
-        fetch('http://localhost:3500/users', {
-          method: 'POST',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            phone: phone,
-            address: address,
-            username: username,
-            password: password,
-          }),
+      axios
+        .post('http://localhost:3500/users/register', userObject)
+        .then((user) => {
+          console.log(user)
+          setFirstName('')
+          setLastName('')
+          setEmail('')
+          setPhone('')
+          setAddress('')
+          setUsername('')
+          setPassword('')
         })
-          .then((response) => {
-            if (response.status === 201) {
-              setFirstName('')
-              setLastName('')
-              setEmail('')
-              setPhone('')
-              setAddress('')
-              setUsername('')
-              setPassword('')
-            }
-          })
-          .then(() => {
-            navigate('/student-login')
-          })
-      } catch (err) {
-        console.log(err)
-      }
-    } else {
-      setIsError(true)
+        .catch((err) => {
+          console.log(err)
+        })
     }
   }
 
