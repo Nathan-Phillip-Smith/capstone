@@ -10,22 +10,23 @@
 8. [x] Create login page
 9. [x] Create user registration page
 10. [ ] Create courses page
-11. [ ] Create user profile page
+11. [x] Create user profile page
 12. [ ] Create admin page
 13. [ ] Create search feature for courses and users
 14. [x] Create env variables
 15. [] Configure logging (Winston/Morgan)
-16. [ ] Create client-side routes
-17. [ ] Create client-side route guard
-18. [ ] Create server-side routes
-19. [ ] Create server-side route guard
-20. [ ] Implement a loading icon
+16. [x] Create client-side routes
+17. [x] Create client-side route guard
+18. [x] Create server-side routes
+19. [x] Create server-side route guard
+20. [x] Implement a loading icon
 21. [ ] Sanitize inputs and ensure security
 22. [x] Logout functionality
-23. [ ] Good directory and code structure
-24. [ ] Refactor as you go
+23. [x] Good directory and code structure
+24. [x] Refactor as you go
 25. [ ] Responsive design
 26. [ ] Deploy application to render
+27. [ ] Make messages disappear
 
 # Rubric
 
@@ -38,7 +39,7 @@
 ### Login Page: 10%
 
 4. [x]User can log in and log out successfully
-5. [ ]Gracefully handles incorrect credentials
+5. [x]Gracefully handles incorrect credentials
 6. [x]Includes a link to the User Registration page
 
 ### User Profile Page: 10%
