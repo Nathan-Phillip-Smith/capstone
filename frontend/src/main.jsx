@@ -3,18 +3,16 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
-import { store } from './app/store.jsx'
-import { Provider } from 'react-redux'
+import AuthProvider from './Context/AuthContext'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
+    <BrowserRouter>
+      <AuthProvider>
         <Routes>
           <Route path="/*" element={<App />} />
         </Routes>
-      </BrowserRouter>
-    </Provider>
+      </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>
 )

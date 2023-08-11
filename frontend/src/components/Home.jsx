@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import HomeHeader from './HomeHeader'
-import HomeFooter from './HomeFooter'
+import HomeHeader from './Header'
+import HomeFooter from './Footer'
 
 const Home = () => {
   const content = (

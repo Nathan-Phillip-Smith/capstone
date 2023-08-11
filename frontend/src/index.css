@@ -68,6 +68,13 @@
   padding: 0.5rem 1rem;
   margin: 0.5rem;
 }
+.home-header__button-disabled {
+  border-style: none;
+  color: var(--TEXTCOLOR);
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+}
 .home-header__button-alt {
   border-style: none;
   background-color: var(--TEXTCOLOR);
@@ -235,6 +242,7 @@ body {
 }
 .home-footer__address {
   margin-bottom: 2rem;
+  color: var(--TEXTCOLORALT);
 }
 
 /* REGISTER PAGE */
@@ -246,7 +254,7 @@ body {
   background-size: cover;
 }
 
-/* STUDENT LOGIN */
+/* LOGIN PAGE */
 
 .student-login {
   display: flex;
@@ -256,14 +264,51 @@ body {
   background-position: 50%;
 }
 
-/* ADMIN LOGIN */
+/* STUDENT PROFILE PAGE */
 
-.admin-login {
+.profile__student-info {
   display: flex;
-  justify-content: center;
-  background-image: url('/img/background.jpg');
-  background-size: cover;
-  background-position: 50%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+}
+.profile__totals {
+  display: flex;
+}
+.profile__totals p {
+  margin: 1rem;
+}
+
+.profile__courses-schedule {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.profile__box {
+  border: 0.2rem solid var(--BGCOLOR);
+  box-shadow: inset rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 4rem;
+  margin: 4rem;
+}
+.profile__schedule {
+  max-height: 30rem;
+}
+.profile__courses {
+  height: 40rem;
+}
+
+.profile__available-search {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile__search-label {
+  margin: 0 1rem;
+}
+.profile__search-input {
+  border-radius: 2rem;
+  padding: 0 1rem;
 }
 
 /* FORMS */
@@ -292,6 +337,13 @@ body {
 }
 
 /* OTHER */
+
+.messageError {
+  color: #922828;
+}
+.message {
+  color: #289252;
+}
 
 input,
 button,

@@ -20,7 +20,7 @@ const HomeFooter = () => {
           555 Foo Drive, Foo City, CA 55555 • (555) 555 - 5555 • @CAPSTONE
           PROJECT UNIVERSITY
         </p>
-        <p>
+        <p className="home-footer__address">
           Terms of Use | Privacy Statement | Copyright Complaints |
           Non-Discrimination
         </p>

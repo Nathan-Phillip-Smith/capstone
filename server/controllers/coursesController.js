@@ -38,18 +38,7 @@
 //   const { courseId, courseTitle, courseDesc, roomNum, capacity, hours, cost } =
 //     req.body
 
-//   // Confirm data
-//   if (
-//     !courseId ||
-//     !courseTitle ||
-//     !courseDesc ||
-//     !roomNum ||
-//     !capacity ||
-//     !hours ||
-//     !cost
-//   ) {
-//     return res.status(400).json({ message: 'All fields are required' })
-//   }
+//
 
 //   // Check for duplicate title
 //   const duplicate = await Course.findOne({ 'Course ID': courseId })
@@ -60,7 +49,7 @@
 //     return res.status(409).json({ message: 'Duplicate Course ID' })
 //   }
 
-//   // Create and store the new user
+//   // Create and store the new course
 //   const course = await Course.create({
 //     'Course ID': courseId,
 //     'Course Title': courseTitle,

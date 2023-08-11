@@ -28,6 +28,7 @@ app.use(cors(corsOptions))
 app.use(express.json())
 app.use(cookieParser())
 app.use('/users', require('./routes/userRoutes'))
+app.use('/courses', require('./routes/courseRoutes'))
 
 mongoose.connection.once('open', () => {
   console.log('Connected to the DataBase')

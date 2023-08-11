@@ -26,7 +26,7 @@ const courseSchema = new mongoose.Schema({
     required: true,
   },
   'Tuition Cost': {
-    type: String,
+    type: Number,
     required: true,
   },
 })
