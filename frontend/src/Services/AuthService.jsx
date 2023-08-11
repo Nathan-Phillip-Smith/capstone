@@ -13,7 +13,8 @@ export default {
     } else
       return {
         isAuthenticated: false,
-        user: { username: '', roles: [] },
+        user: { username: '', roles: [], classes: [] },
+        message: { msgBody: 'Invalid Username or Password', msgError: true },
       }
   },
   register: async (user) => {
@@ -26,7 +27,11 @@ export default {
     })
     if (response.status !== 401) {
       return response.json()
-    } else return { isAuthenticated: false, user: { username: '', roles: [] } }
+    } else
+      return {
+        isAuthenticated: false,
+        user: { username: '', roles: [], classes: [] },
+      }
   },
   logout: () => {
     return fetch('http://localhost:3500/users/logout', {
@@ -44,7 +49,10 @@ export default {
     if (response.status !== 401) {
       return response.json().then((data) => data)
     } else {
-      return { isAuthenticated: false, user: { username: '', roles: [] } }
+      return {
+        isAuthenticated: false,
+        user: { username: '', roles: [], classes: [] },
+      }
     }
   },
 }

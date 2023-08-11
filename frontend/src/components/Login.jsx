@@ -21,7 +21,6 @@ const Login = () => {
         ? navigate('/admin-panel')
         : navigate('/student-profile')
     } else {
-      console.log(data.message)
       setMessage(data.message)
     }
   }

@@ -66,7 +66,7 @@ const StudentProfile = () => {
       )
     }
     if (search.courseTitle.length > 0) {
-      availableCoursesArray = courses.filter((course) =>
+      availableCoursesArray = availableCoursesArray.filter((course) =>
         course['Course Title']
           .toLowerCase()
           .startsWith(search.courseTitle.toLowerCase())
@@ -195,7 +195,6 @@ const StudentProfile = () => {
                 type="text"
                 onChange={handleSearchInput}
               ></input>
-              <button>filter</button>
             </div>
           </div>
           <p className={allMessage?.msgError ? 'messageError' : 'message'}>

@@ -51,13 +51,13 @@ router.post('/register', async (req, res) => {
   const ADD_REGEX = /^[A-z0-9!@#$%'()-_"\s]{1,200}$/
 
   const canRegister = [
-    FNAME_REGEX.test(user.firstName),
-    LNAME_REGEX.test(user.lastName),
-    EMAIL_REGEX.test(user.email),
-    PHONE_REGEX.test(user.phone),
-    ADD_REGEX.test(user.address),
-    USER_REGEX.test(user.username),
-    PWD_REGEX.test(user.password),
+    FNAME_REGEX.test(firstName),
+    LNAME_REGEX.test(lastName),
+    EMAIL_REGEX.test(email),
+    PHONE_REGEX.test(phone),
+    ADD_REGEX.test(address),
+    USER_REGEX.test(username),
+    PWD_REGEX.test(password),
   ].every(Boolean)
 
   if (canRegister) {
