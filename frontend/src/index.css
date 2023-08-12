@@ -311,6 +311,56 @@ body {
   padding: 0 1rem;
 }
 
+/* ADMIN PANEL PAGE */
+
+.admin__admin-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+}
+
+.admin__courses-students {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.admin__box {
+  border: 0.2rem solid var(--BGCOLOR);
+  box-shadow: inset rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 4rem;
+  margin: 4rem;
+}
+.admin__students {
+  max-height: 30rem;
+}
+.admin__courses {
+  height: 40rem;
+}
+
+.admin__available-search {
+  display: flex;
+  justify-content: space-between;
+}
+.admin__search-bar {
+  display: flex;
+  justify-content: space-around;
+}
+.admin__search-label {
+  margin: 0 1rem;
+}
+.admin__search-input {
+  border-radius: 2rem;
+  padding: 0 1rem;
+}
+.admin__course-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* FORMS */
 
 .form {

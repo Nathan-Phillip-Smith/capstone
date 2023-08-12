@@ -22,4 +22,14 @@ export default {
       return response.json().then((data) => data)
     } else return { message: { msgBody: 'Unauthorized', msgError: true } }
   },
+
+  getStudents: async () => {
+    const response = await fetch('http://localhost:3500/users/students', {
+      method: 'get',
+      credentials: 'include',
+    })
+    if (response.status !== 401) {
+      return response.json().then((data) => data)
+    } else return { message: { msgBody: 'Unauthorized', msgError: true } }
+  },
 }

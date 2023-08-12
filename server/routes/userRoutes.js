@@ -140,6 +140,32 @@ router.get(
     })
   }
 )
+router.get(
+  '/students',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    if (req.user.roles.includes('admin')) {
+      const students = await User.find().lean()
+      if (!students?.length) {
+        return res
+          .status(400)
+          .json({ message: { msgBody: 'No students found', msgError: true } })
+      }
+      res.status(200).json({
+        message: { msgBody: 'Found Student', msgError: false },
+        students,
+      })
+    } else {
+      res.status(401).json({
+        message: {
+          msgBody: `Unauthorized`,
+          msgError: true,
+        },
+        user,
+      })
+    }
+  }
+)
 
 router.post('/edit-user', async (req, res) => {
   const { _id, firstName, lastName, email, phone, address, username } = req.body

@@ -4,14 +4,6 @@ import AuthService from '../Services/AuthService'
 import HomeHeader from './Header'
 import HomeFooter from './Footer'
 
-// const USER_REGEX = /^[A-z]{3,20}$/
-// const PWD_REGEX = /^[A-z0-9!@#$%]{4,12}$/
-// const FNAME_REGEX = /^[A-z]{1,20}$/
-// const LNAME_REGEX = /^[A-z]{1,20}$/
-// const EMAIL_REGEX = /^[A-z0-9!@#$%.-_]{7,50}$/
-// const PHONE_REGEX = /^[0-9()-\s]{7,12}$/
-// const ADD_REGEX = /^[A-z0-9!@#$%'()-_"\s]{1,200}$/
-
 const Register = () => {
   const navigate = useNavigate()
   const [user, setUser] = useState({
@@ -47,16 +39,6 @@ const Register = () => {
       password: '',
     })
   }
-
-  // const canRegister = [
-  //   FNAME_REGEX.test(user.firstName),
-  //   LNAME_REGEX.test(user.lastName),
-  //   EMAIL_REGEX.test(user.email),
-  //   PHONE_REGEX.test(user.phone),
-  //   ADD_REGEX.test(user.address),
-  //   USER_REGEX.test(user.username),
-  //   PWD_REGEX.test(user.password),
-  // ].every(Boolean)
 
   const onRegisterUserClicked = async (e) => {
     e.preventDefault()

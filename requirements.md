@@ -9,12 +9,12 @@
 7. [x] Create course model - id, title, description, schedule, classroom_number, maximum_capacity, credit_hours, tuition_cost
 8. [x] Create login page
 9. [x] Create user registration page
-10. [ ] Create courses page
+10. [x] Create courses page
 11. [x] Create user profile page
-12. [ ] Create admin page
-13. [ ] Create search feature for courses and users
+12. [x] Create admin page
+13. [x] Create search feature for courses and users
 14. [x] Create env variables
-15. [] Configure logging (Winston/Morgan)
+15. [ ] Configure logging (Winston/Morgan)
 16. [x] Create client-side routes
 17. [x] Create client-side route guard
 18. [x] Create server-side routes
@@ -27,6 +27,7 @@
 25. [ ] Responsive design
 26. [ ] Deploy application to render
 27. [ ] Make messages disappear
+28. [ ] Local Storage clear on header buttons
 
 # Rubric
 
@@ -44,27 +45,27 @@
 
 ### User Profile Page: 10%
 
-7. [ ]Profile page is easy to use
-8. [ ]Data is stored and retrieved correctly
-9. [ ]User can update information successfully
-10. [ ]Correctly displays users schedule
-11. [ ]Correctly displays users total tuition fees.
-12. [ ]Correctly displays users total credit hours
+7. [x]Profile page is easy to use
+8. [x]Data is stored and retrieved correctly
+9. [x]User can update information successfully
+10. [x]Correctly displays users schedule
+11. [x]Correctly displays users total tuition fees.
+12. [x]Correctly displays users total credit hours
 
 ### Course Pages: 10%
 
-13. [ ]Correctly displays information for all courses.
-14. [ ]Includes a search/filter feature
-15. [ ]Students can correctly register courses
-16. [ ]Students cannot register for courses that are full, or that they are already registered for.
+13. [x]Correctly displays information for all courses.
+14. [x]Includes a search/filter feature
+15. [x]Students can correctly register courses
+16. [/]Students cannot register for courses that are full, or that they are already registered for.
 
 ### Administrator Pages: 10%
 
-17. [ ]Appropriate fields are included
-18. [ ]Includes a search/filter feature
-19. [ ]Data is stored and retrieved correctly
+17. [x]Appropriate fields are included
+18. [x]Includes a search/filter feature
+19. [x]Data is stored and retrieved correctly
 20. [ ]Administrators can create, edit, and delete users successfully
-21. [ ]Administrators can create, edit, and delete courses successfully
+21. [x]Administrators can create, edit, and delete courses successfully
 22. [ ]Administrators can register/unregister any user for any course
 
 ### Logging: 5%
@@ -74,18 +75,18 @@
 
 ### Authentication System: 10%
 
-25. [ ]Authentication system is secure
-26. [ ]User passwords are encrypted
-27. [ ]client-side routes are guarded against users that are not logged in
-28. [ ]client-side admin routes are guarded against non-admin users
-29. [ ]server-side routes are guarded against users that are not logged in
-30. [ ]server-side admin routes are guarded against non-admin users
+25. [x]Authentication system is secure
+26. [x]User passwords are encrypted
+27. [x]client-side routes are guarded against users that are not logged in
+28. [x]client-side admin routes are guarded against non-admin users
+29. [x]server-side routes are guarded against users that are not logged in
+30. [x]server-side admin routes are guarded against non-admin users
 
 ### Database: 10%
 
-31. [ ]Collections/Tables have correct data
-32. [ ]Collections/Tables have correct constraints
-33. [ ]Data is updated correctly
+31. [x]Collections/Tables have correct data
+32. [x]Collections/Tables have correct constraints
+33. [x]Data is updated correctly
 34. [ ]Inputs are correctly sanitized
 
 ### Deployment: 5%

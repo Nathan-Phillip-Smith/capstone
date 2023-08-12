@@ -9,6 +9,8 @@ import StudentPrivateRoutes from './hocs/StudentPrivateRoutes'
 import AdminPrivateRoutes from './hocs/AdminPrivateRoutes'
 import UnPrivateRoutes from './hocs/UnPrivateRoutes'
 import StudentProfileEdit from './components/StudentProfileEdit'
+import CourseEdit from './components/CourseEdit'
+import CourseCreate from './components/CourseCreate'
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         </Route>
         <Route element={<AdminPrivateRoutes />}>
           <Route path="/admin-panel" element={<AdminPanel />} />
+          <Route path="/edit-course" element={<CourseEdit />} />
+          <Route path="/create-course" element={<CourseCreate />} />
         </Route>
       </Route>
     </Routes>
