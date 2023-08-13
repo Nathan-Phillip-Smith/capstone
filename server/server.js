@@ -20,10 +20,9 @@ app.use(
     saveUninitialized: false,
   })
 )
-console.log('hiya')
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(cors(corsOptions))
+app.use(cors())
 app.use(express.json())
 app.use(cookieParser())
 app.use('/', express.static(path.join(__dirname, '../frontend/dist')))
