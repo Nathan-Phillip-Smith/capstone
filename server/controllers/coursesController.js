@@ -63,9 +63,7 @@
 //   if (course) {
 //     // Created
 //     return res.status(201).json({ message: 'New course created' })
-//   } else {
-//     return res.status(400).json({ message: 'Invalid course data received' })
-//   }
+//
 // })
 
 // // @desc Update a course
