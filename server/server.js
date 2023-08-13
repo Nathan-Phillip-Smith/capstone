@@ -20,12 +20,13 @@ app.use(
     saveUninitialized: false,
   })
 )
+console.log('hiya')
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(cors(corsOptions))
-app.use('/', express.static('../frontend/dist'))
 app.use(express.json())
 app.use(cookieParser())
+app.use('/', express.static(path.join(__dirname, '../frontend/dist')))
 app.use('/users', require('./routes/userRoutes'))
 app.use('/courses', require('./routes/courseRoutes'))
 
