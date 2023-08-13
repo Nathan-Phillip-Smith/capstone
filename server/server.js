@@ -11,8 +11,6 @@ const port = process.env.PORT || 3500
 const passport = require('passport')
 const session = require('express-session')
 
-console.log(process.env.NODE_ENV)
-
 connectDB()
 
 app.use(
