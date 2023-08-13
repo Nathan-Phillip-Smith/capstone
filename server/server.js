@@ -22,7 +22,7 @@ app.use(
 )
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(cookieParser())
 app.use('/', express.static(path.join(__dirname, '../frontend/dist')))
