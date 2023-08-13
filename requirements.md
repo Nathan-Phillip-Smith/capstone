@@ -64,9 +64,9 @@
 17. [x]Appropriate fields are included
 18. [x]Includes a search/filter feature
 19. [x]Data is stored and retrieved correctly
-20. [ ]Administrators can create, edit, and delete users successfully
+20. [/]Administrators can create, edit, and delete users successfully
 21. [x]Administrators can create, edit, and delete courses successfully
-22. [ ]Administrators can register/unregister any user for any course
+22. [x]Administrators can register/unregister any user for any course
 
 ### Logging: 5%
 

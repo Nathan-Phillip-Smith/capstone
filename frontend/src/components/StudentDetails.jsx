@@ -3,13 +3,22 @@ import HomeHeader from './Header'
 import { useNavigate } from 'react-router-dom'
 import CourseScheduleRow from './CourseScheduleRow'
 import CourseAvailableRow from './CourseAvailableRow'
-import { useContext, useEffect, useState } from 'react'
-import { AuthContext } from '../Context/AuthContext'
+import { useEffect, useState } from 'react'
 import CourseService from '../Services/CourseService'
+import UserService from '../Services/UserService'
 
-const StudentProfile = () => {
+const StudentDetails = () => {
   const navigate = useNavigate()
-  const { user, setUser } = useContext(AuthContext)
+  const [user, setUser] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    address: '',
+    username: '',
+    password: '',
+    classes: [],
+  })
   const [courses, setCourses] = useState([])
   const [availableCourses, setAvailableCourses] = useState([])
   const [schedule, setSchedule] = useState([])
@@ -19,6 +28,21 @@ const StudentProfile = () => {
   const [scheduleMessage, setScheduleMessage] = useState(null)
   const [credits, setCredits] = useState(0)
   const [tuition, setTuition] = useState(0)
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const studentFromStorage = await localStorage.getItem('studentToEdit')
+      const data = await UserService.getUserFromId({ id: studentFromStorage })
+      if (data?.message.msgError) {
+        setMessage(data.message)
+      } else if (!data?.message.msgError) {
+        setUser(data.user)
+      } else {
+        setMessage({ message: { msgBody: 'Try again later', msgError: true } })
+      }
+    }
+    fetchUser()
+  }, [])
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -35,7 +59,7 @@ const StudentProfile = () => {
   useEffect(() => {
     let scheduleArray = []
     courses.map((course) => {
-      if (user.classes.includes(course._id)) {
+      if (user?.classes?.includes(course._id)) {
         scheduleArray.push(course)
       }
       setSchedule(scheduleArray)
@@ -75,7 +99,7 @@ const StudentProfile = () => {
     setAvailableCourses(availableCoursesArray)
   }, [courses, search])
 
-  const onEditInfoClicked = () => navigate('/student-edit')
+  const onEditInfoClicked = () => navigate('/student-details-edit')
 
   const onAddClassClicked = async (e) => {
     let newClasses = []
@@ -83,6 +107,7 @@ const StudentProfile = () => {
     const data = await CourseService.addClass({
       id: e.target.id,
       credits: credits,
+      userId: user._id,
     })
     if (!data.message.msgError) {
       courses.map((course) => {
@@ -102,7 +127,10 @@ const StudentProfile = () => {
   const onRemoveClassClicked = async (e) => {
     let newClasses = []
     let newClassesId = []
-    const data = await CourseService.removeClass({ id: e.target.id })
+    const data = await CourseService.removeClass({
+      id: e.target.id,
+      userId: user._id,
+    })
     schedule.map((course) => {
       if (course._id === e.target.id) {
         newClasses = [...schedule]
@@ -124,7 +152,7 @@ const StudentProfile = () => {
       <HomeHeader />
 
       <section className="profile__student-info">
-        <h1>StudentProfile</h1>
+        <h1>{user.firstName}'s Profile</h1>
         <div className="profile__totals">
           <p>TOTAL CREDITS: {credits}</p>
           <p>TOTAL TUITION: ${tuition}.00</p>
@@ -146,7 +174,7 @@ const StudentProfile = () => {
           {schedule.length < 1 ? (
             <p>'No Registered Classes'</p>
           ) : (
-            <table className="table table-hover">
+            <table className="table">
               <thead>
                 <tr>
                   <th scope="col">Course ID</th>
@@ -203,7 +231,7 @@ const StudentProfile = () => {
           {availableCourses.length < 1 ? (
             <p>'Sorry! No Matches Found'</p>
           ) : (
-            <table className="table table-hover">
+            <table className="table">
               <thead>
                 <tr>
                   <th scope="col">Course ID</th>
@@ -237,4 +265,4 @@ const StudentProfile = () => {
     </>
   )
 }
-export default StudentProfile
+export default StudentDetails

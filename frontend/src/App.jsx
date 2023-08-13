@@ -11,6 +11,8 @@ import UnPrivateRoutes from './hocs/UnPrivateRoutes'
 import StudentProfileEdit from './components/StudentProfileEdit'
 import CourseEdit from './components/CourseEdit'
 import CourseCreate from './components/CourseCreate'
+import StudentDetails from './components/StudentDetails'
+import StudentDetailsEdit from './components/StudentDetailsEdit'
 
 function App() {
   return (
@@ -29,6 +31,11 @@ function App() {
           <Route path="/admin-panel" element={<AdminPanel />} />
           <Route path="/edit-course" element={<CourseEdit />} />
           <Route path="/create-course" element={<CourseCreate />} />
+          <Route path="/student-details" element={<StudentDetails />} />
+          <Route
+            path="/student-details-edit"
+            element={<StudentDetailsEdit />}
+          />
         </Route>
       </Route>
     </Routes>

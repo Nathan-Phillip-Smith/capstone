@@ -140,6 +140,31 @@ router.get(
     })
   }
 )
+router.post(
+  '/student-id',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    const user = await User.findById(req.body.id)
+
+    if (user) {
+      res.status(200).json({
+        message: {
+          msgBody: `Received data for ${user.firstName}`,
+          msgError: false,
+        },
+        user,
+      })
+    } else {
+      res.status(400).json({
+        message: {
+          msgBody: `No Student Found`,
+          msgError: true,
+        },
+        user,
+      })
+    }
+  }
+)
 router.get(
   '/students',
   passport.authenticate('jwt', { session: false }),

@@ -8,12 +8,34 @@ const HomeHeader = () => {
     useContext(AuthContext)
   const { pathname } = useLocation()
   const navigate = useNavigate()
-  const onRegisterClicked = () => navigate('/register')
-  const onLoginClicked = () => navigate('/login')
-  const onProfileClicked = () => navigate('/student-profile')
-  const onAdminPanelClicked = () => navigate('/admin-panel')
-  const onHomeClicked = () => navigate('/')
+  const onRegisterClicked = () => {
+    localStorage.removeItem('courseToEdit')
+    localStorage.removeItem('studentToEdit')
+    navigate('/register')
+  }
+  const onLoginClicked = () => {
+    localStorage.removeItem('courseToEdit')
+    localStorage.removeItem('studentToEdit')
+    navigate('/login')
+  }
+  const onProfileClicked = () => {
+    localStorage.removeItem('courseToEdit')
+    localStorage.removeItem('studentToEdit')
+    navigate('/student-profile')
+  }
+  const onAdminPanelClicked = () => {
+    localStorage.removeItem('courseToEdit')
+    localStorage.removeItem('studentToEdit')
+    navigate('/admin-panel')
+  }
+  const onHomeClicked = () => {
+    localStorage.removeItem('courseToEdit')
+    localStorage.removeItem('studentToEdit')
+    navigate('/')
+  }
   const onLogoutClicked = async () => {
+    localStorage.removeItem('courseToEdit')
+    localStorage.removeItem('studentToEdit')
     const data = await AuthService.logout()
     if (data.success) {
       setUser(data.user)

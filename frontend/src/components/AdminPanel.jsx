@@ -60,14 +60,14 @@ const AdminPanel = () => {
       filteredStudentsArray = students.filter((student) =>
         student.username
           .toLowerCase()
-          .startsWith(studentSearch.studentUsername.toLowerCase())
+          .includes(studentSearch.studentUsername.toLowerCase())
       )
     }
     if (studentSearch.studentLastName.length > 0) {
       filteredStudentsArray = filteredStudentsArray.filter((student) =>
         student.lastName
           .toLowerCase()
-          .startsWith(studentSearch.studentLastName.toLowerCase())
+          .includes(studentSearch.studentLastName.toLowerCase())
       )
     }
     setFilteredStudents(filteredStudentsArray)
@@ -80,14 +80,14 @@ const AdminPanel = () => {
       availableCoursesArray = courses.filter((course) =>
         course['Course ID']
           .toLowerCase()
-          .startsWith(courseSearch.courseId.toLowerCase())
+          .includes(courseSearch.courseId.toLowerCase())
       )
     }
     if (courseSearch.courseTitle.length > 0) {
       availableCoursesArray = availableCoursesArray.filter((course) =>
         course['Course Title']
           .toLowerCase()
-          .startsWith(courseSearch.courseTitle.toLowerCase())
+          .includes(courseSearch.courseTitle.toLowerCase())
       )
     }
     setAvailableCourses(availableCoursesArray)
@@ -101,7 +101,8 @@ const AdminPanel = () => {
   }
 
   const handleStudentClick = (e) => {
-    navigate('/')
+    localStorage.setItem('studentToEdit', e.target.id)
+    navigate('/student-details')
   }
   const handleCourseClick = (e) => {
     let clickedItem = courses.filter((course) => course._id === e.target.id)

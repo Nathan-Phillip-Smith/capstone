@@ -112,12 +112,12 @@ router.post(
         },
       })
     }
-    const user = await User.findOne({ username: req.user.username })
-    updatedUser = user.classes.push(course._id)
-    updatedUser = await user.save()
+    const user = await User.findById(req.body.userId)
+    foundUser = user.classes.push(course._id)
+    foundUser = await user.save()
     res.status(200).json({
       message: {
-        msgBody: `${updatedUser.firstName} added ${course['Course Title']}`,
+        msgBody: `${foundUser.firstName} added ${course['Course Title']}`,
         msgError: false,
       },
     })
@@ -128,12 +128,12 @@ router.post(
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
     const course = await Course.findById(req.body.id)
-    const user = await User.findOne({ username: req.user.username })
-    let updatedUser = user.classes.pull(req.body.id)
-    updatedUser = await user.save()
+    const user = await User.findById(req.body.userId)
+    let foundUser = user.classes.pull(req.body.id)
+    foundUser = await user.save()
     res.status(200).json({
       message: {
-        msgBody: `${updatedUser.firstName} removed ${course['Course Title']}`,
+        msgBody: `${foundUser.firstName} removed ${course['Course Title']}`,
         msgError: false,
       },
     })
