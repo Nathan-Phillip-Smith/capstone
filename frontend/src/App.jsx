@@ -13,6 +13,7 @@ import CourseEdit from './components/CourseEdit'
 import CourseCreate from './components/CourseCreate'
 import StudentDetails from './components/StudentDetails'
 import StudentDetailsEdit from './components/StudentDetailsEdit'
+import StudentDetailsRegister from './components/StudentDetailsRegister'
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/edit-course" element={<CourseEdit />} />
           <Route path="/create-course" element={<CourseCreate />} />
           <Route path="/student-details" element={<StudentDetails />} />
+          <Route path="/admin-register" element={<StudentDetailsRegister />} />
           <Route
             path="/student-details-edit"
             element={<StudentDetailsEdit />}

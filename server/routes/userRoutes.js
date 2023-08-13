@@ -47,7 +47,7 @@ router.post('/register', async (req, res) => {
   const FNAME_REGEX = /^[A-z]{1,20}$/
   const LNAME_REGEX = /^[A-z]{1,20}$/
   const EMAIL_REGEX = /^[A-z0-9!@#$%.-_]{7,50}$/
-  const PHONE_REGEX = /^[0-9()-\s]{7,12}$/
+  const PHONE_REGEX = /^[0-9()-\s]{7,20}$/
   const ADD_REGEX = /^[A-z0-9!@#$%'()-_"\s]{1,200}$/
 
   const canRegister = [
@@ -63,16 +63,30 @@ router.post('/register', async (req, res) => {
   if (canRegister) {
     //   Hash password
     const hashedPwd = await bcrypt.hash(password, 10) //salt rounds
+    let createdUser
+    if (req.body.isAdmin) {
+      createdUser = await User.create({
+        firstName,
+        lastName,
+        email,
+        phone,
+        address,
+        username,
+        password: hashedPwd,
+        roles: ['student', 'admin'],
+      })
+    } else {
+      createdUser = await User.create({
+        firstName,
+        lastName,
+        email,
+        phone,
+        address,
+        username,
+        password: hashedPwd,
+      })
+    }
 
-    const createdUser = await User.create({
-      firstName,
-      lastName,
-      email,
-      phone,
-      address,
-      username,
-      password: hashedPwd,
-    })
     if (createdUser) {
       // new user created
       return res
@@ -238,7 +252,7 @@ router.post('/edit-user', async (req, res) => {
   const FNAME_REGEX = /^[A-z]{1,20}$/
   const LNAME_REGEX = /^[A-z]{1,20}$/
   const EMAIL_REGEX = /^[A-z0-9!@#$%.-_]{7,50}$/
-  const PHONE_REGEX = /^[0-9()-\s]{7,12}$/
+  const PHONE_REGEX = /^[0-9()-\s]{7,20}$/
   const ADD_REGEX = /^[A-z0-9!@#$%'()-_"\s]{1,200}$/
 
   const canEdit = [
@@ -295,6 +309,41 @@ router.get(
     res
       .status(200)
       .json({ isAuthenticated: true, user: { username, roles, classes } })
+  }
+)
+router.delete(
+  '/delete-user',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    if (req.user.roles.includes('admin')) {
+      const { id } = req.body
+
+      // Confirm data
+      if (!id) {
+        return res
+          .status(400)
+          .json({ message: { msgBody: 'User Id required', msgError: true } })
+      }
+
+      // Confirm course exists to delete
+      const user = await User.findById(id).exec()
+
+      if (!user) {
+        return res
+          .status(400)
+          .json({ message: { msgBody: 'User not found', msgError: true } })
+      }
+
+      const result = await user.deleteOne()
+
+      const reply = `User '${result.username}' with ID ${result._id} deleted`
+
+      res.json({ message: { msgBody: reply, msgError: false } })
+    } else {
+      res
+        .status(400)
+        .json({ message: { msgBody: 'Unauthorized', msgError: true } })
+    }
   }
 )
 

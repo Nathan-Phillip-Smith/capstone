@@ -27,7 +27,8 @@
 25. [ ] Responsive design
 26. [ ] Deploy application to render
 27. [ ] Make messages disappear
-28. [ ] Local Storage clear on header buttons
+28. [ ] Make messages appear above boxes and on delete student/course
+29. [ ] Local Storage clear on header buttons
 
 # Rubric
 
@@ -64,7 +65,7 @@
 17. [x]Appropriate fields are included
 18. [x]Includes a search/filter feature
 19. [x]Data is stored and retrieved correctly
-20. [/]Administrators can create, edit, and delete users successfully
+20. [x]Administrators can create, edit, and delete users successfully
 21. [x]Administrators can create, edit, and delete courses successfully
 22. [x]Administrators can register/unregister any user for any course
 

@@ -135,7 +135,7 @@ const StudentProfile = () => {
       <HomeHeader />
 
       <section className="profile__student-info">
-        <h1>StudentProfile</h1>
+        <h1>{user.username}'s Profile</h1>
         <div className="profile__totals">
           <p>TOTAL CREDITS: {credits}</p>
           <p>TOTAL TUITION: ${tuition}.00</p>

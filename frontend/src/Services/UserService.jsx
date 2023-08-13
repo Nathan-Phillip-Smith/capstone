@@ -45,4 +45,21 @@ export default {
       return response.json().then((data) => data)
     } else return { message: { msgBody: 'Unauthorized', msgError: true } }
   },
+  deleteUser: async (data) => {
+    const response = await fetch('http://localhost:3500/users/delete-User', {
+      method: 'delete',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+    })
+    if (response.status !== 401) {
+      return response.json()
+    } else
+      return {
+        isAuthenticated: false,
+        user: { username: '', roles: [], classes: [] },
+      }
+  },
 }

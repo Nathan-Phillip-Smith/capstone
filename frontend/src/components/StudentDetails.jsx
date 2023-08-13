@@ -149,6 +149,16 @@ const StudentDetails = () => {
     setSchedule(newClasses)
     setScheduleMessage(data.message)
   }
+  const onDeleteStudentClicked = async (e) => {
+    const data = await UserService.deleteUser({ id: e.target.id })
+    if (data.message.msgError) {
+      setMessage(data.message)
+    } else {
+      localStorage.removeItem('studentToEdit')
+      console.log(data.message.msgBody)
+      navigate('/admin-panel')
+    }
+  }
   const handleSearchInput = (e) => {
     setSearch({ ...search, [e.target.name]: e.target.value })
   }
@@ -170,6 +180,14 @@ const StudentDetails = () => {
             onClick={onEditInfoClicked}
           >
             Edit Account
+          </button>
+          <button
+            className="home-header__button"
+            title="Delete"
+            id={user._id}
+            onClick={onDeleteStudentClicked}
+          >
+            Delete Student
           </button>
         </div>
       </section>

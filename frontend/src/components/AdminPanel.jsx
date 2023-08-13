@@ -46,8 +46,11 @@ const AdminPanel = () => {
     const fetchStudents = async () => {
       const data = await UserService.getStudents()
       if (data?.message) {
+        const onlyStudents = data.students.filter(
+          (user) => !user.roles.includes('admin')
+        )
         setMessage(data.message)
-        setStudents(data.students)
+        setStudents(onlyStudents)
       }
     }
     fetchStudents()
@@ -131,7 +134,7 @@ const AdminPanel = () => {
   const handleDeleteClickedCourse = async (e) => {
     const data = await CourseService.deleteCourse({ id: e.target.id })
     if (!data.message.msgError) {
-      console.log(data.message)
+      setMessage(data.message)
       setCourseClicked({
         id: '',
         clicked: false,
@@ -153,6 +156,9 @@ const AdminPanel = () => {
   const handleAddCourse = () => {
     navigate('/create-course')
   }
+  const handleRegisterStudent = () => {
+    navigate('/admin-register')
+  }
 
   return (
     <>
@@ -162,10 +168,19 @@ const AdminPanel = () => {
         <h1>Admin Panel</h1>
       </section>
       <section className="admin__courses-student">
+        {/* <p className="messageError">{message?.msgBody}</p> */}
         <div className="table-responsive admin__students admin__box">
           <div className="admin__available-search">
-            <h2>Students</h2>
+            <div className="admin__course-title">
+              <h2>Students</h2>
+            </div>
             <div className="admin__search-bar">
+              <button
+                className="home-header__button"
+                onClick={handleRegisterStudent}
+              >
+                Register Student
+              </button>
               <div>
                 <label
                   className="admin__search-label"
@@ -198,7 +213,9 @@ const AdminPanel = () => {
               </div>
             </div>
           </div>
-          <p>Click a student to view schedule and edit students details</p>
+          <p p className="admin__click-table-message">
+            Click a student to view schedule and edit students details
+          </p>
           {filteredStudents < 1 ? (
             <p>Sorry! No Matches Found</p>
           ) : (
@@ -233,7 +250,7 @@ const AdminPanel = () => {
             <div className="admin__available-search">
               <div className="admin__course-title">
                 <h2>Courses</h2>
-                <div>
+                <div className="admin__course-buttons">
                   <button
                     className="home-header__button"
                     title="back"
@@ -301,7 +318,9 @@ const AdminPanel = () => {
           )}
 
           {!courseClicked.clicked ? (
-            <p>Click a course to view registered students</p>
+            <p className="admin__click-table-message">
+              Click a course to view registered students
+            </p>
           ) : (
             ''
           )}
