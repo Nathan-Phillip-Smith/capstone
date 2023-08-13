@@ -25,6 +25,7 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(cors(corsOptions))
+app.use('/', express.static('dist'))
 app.use(express.json())
 app.use(cookieParser())
 app.use('/users', require('./routes/userRoutes'))
