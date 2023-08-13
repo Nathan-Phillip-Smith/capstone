@@ -107,7 +107,7 @@ const StudentDetails = () => {
     const data = await CourseService.addClass({
       id: e.target.id,
       credits: credits,
-      userId: user._id,
+      userUsername: user.username,
     })
     if (!data.message.msgError) {
       courses.map((course) => {
@@ -116,6 +116,9 @@ const StudentDetails = () => {
           newClasses.push(course)
           newClassesId = [...user.classes]
           newClassesId.push(course._id)
+        }
+        if (course._id === data.updatedCourse._id) {
+          course.Capacity = data.updatedCourse.Capacity
         }
       })
       setUser({ ...user, classes: newClassesId })
@@ -129,7 +132,7 @@ const StudentDetails = () => {
     let newClassesId = []
     const data = await CourseService.removeClass({
       id: e.target.id,
-      userId: user._id,
+      userUsername: user.username,
     })
     schedule.map((course) => {
       if (course._id === e.target.id) {
@@ -137,6 +140,9 @@ const StudentDetails = () => {
         newClasses = newClasses.filter((item) => item._id !== course._id)
         newClassesId = [...user.classes]
         newClassesId = newClassesId.filter((item) => item !== course._id)
+      }
+      if (course._id === data.updatedCourse._id) {
+        course.Capacity = data.updatedCourse.Capacity
       }
     })
     setUser({ ...user, classes: newClassesId })

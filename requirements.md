@@ -57,7 +57,7 @@
 13. [x]Correctly displays information for all courses.
 14. [x]Includes a search/filter feature
 15. [x]Students can correctly register courses
-16. [/]Students cannot register for courses that are full, or that they are already registered for.
+16. [x]Students cannot register for courses that are full, or that they are already registered for.
 
 ### Administrator Pages: 10%
 
@@ -97,15 +97,15 @@
 
 ### UX/UI Design: 10%
 
-38. [ ]Application is visually appealing
-39. [ ]Navigation is intuitive
-40. [ ]Overall design is user-friendly
+38. [x]Application is visually appealing
+39. [x]Navigation is intuitive
+40. [x]Overall design is user-friendly
 41. [ ]Includes responsive design
 42. [ ]Includes loading icon
 
 ### Code Structure: 10%
 
-43. [ ]Code is easy to navigate
-44. [ ]Code is easy to read
-45. [ ]Code is easy to understand
-46. [ ]Code is correctly partitioned
+43. [x]Code is easy to navigate
+44. [x]Code is easy to read
+45. [x]Code is easy to understand
+46. [x]Code is correctly partitioned

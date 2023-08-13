@@ -104,6 +104,14 @@ router.post(
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
     const course = await Course.findById(req.body.id)
+    if (course.Capacity < 1) {
+      return res.status(400).json({
+        message: {
+          msgBody: 'Course is full',
+          msgError: true,
+        },
+      })
+    }
     if (req.body.credits + course['Credit Hours'] > 18) {
       return res.status(400).json({
         message: {
@@ -112,14 +120,17 @@ router.post(
         },
       })
     }
-    const user = await User.findById(req.body.userId)
-    foundUser = user.classes.push(course._id)
+    const user = await User.findOne({ username: req.body.userUsername })
+    let foundUser = user.classes.push(course._id)
     foundUser = await user.save()
+    let updatedCourse = course.Capacity--
+    updatedCourse = await course.save()
     res.status(200).json({
       message: {
         msgBody: `${foundUser.firstName} added ${course['Course Title']}`,
         msgError: false,
       },
+      updatedCourse,
     })
   }
 )
@@ -128,14 +139,17 @@ router.post(
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
     const course = await Course.findById(req.body.id)
-    const user = await User.findById(req.body.userId)
+    const user = await User.findOne({ username: req.body.userUsername })
     let foundUser = user.classes.pull(req.body.id)
     foundUser = await user.save()
+    let updatedCourse = course.Capacity++
+    updatedCourse = await course.save()
     res.status(200).json({
       message: {
         msgBody: `${foundUser.firstName} removed ${course['Course Title']}`,
         msgError: false,
       },
+      updatedCourse,
     })
   }
 )
