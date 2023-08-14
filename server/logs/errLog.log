@@ -1,2 +1,6 @@
 20230814	13:18:44	2208ef02-9fb1-46a5-8ad1-c332c1cf02f3	SyntaxError: Unexpected token " in JSON at position 0	POST	/courses/edit-course	http://localhost:5173
 20230814	13:19:14	4e68253d-7bab-46ac-9b9c-b3a1c40b561f	SyntaxError: Unexpected token " in JSON at position 0	POST	/courses/edit-course	http://localhost:5173
+20230814	14:09:52	02d052d3-1a02-427a-b3b2-5bf47aa33c6d	Error: Not allowed by CORS	OPTIONS	/users/authenticated	https://nl.hideproxy.me
+20230814	14:09:52	98d7dfd1-81f2-4f94-95d9-730875ceb051	Error: Not allowed by CORS	GET	/users/authenticated	https://nl.hideproxy.me
+20230814	14:11:27	b42e3e18-a5fa-43e6-9b42-164d92bc6402	Error: Not allowed by CORS	OPTIONS	/users/authenticated	https://de.hideproxy.me
+20230814	14:11:27	90e1ef69-68ab-427d-8c64-22c544728b26	Error: Not allowed by CORS	GET	/users/authenticated	https://de.hideproxy.me

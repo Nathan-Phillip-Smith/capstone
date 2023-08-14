@@ -40,3 +40,17 @@
 20230814	13:19:16	782cb0cc-4409-453e-a16a-5b32d8f37da5	GET	/courses/view-courses	http://localhost:5173
 20230814	13:19:16	df039feb-c04f-471d-90f5-49f96f4c120b	GET	/users/students	http://localhost:5173
 20230814	13:20:57	d8711b37-1b0e-4a17-9bdd-c8df531e2c39	GET	/users/logout	http://localhost:5173
+20230814	13:57:51	d017ac5d-5ec2-4249-b997-d2366de85755	OPTIONS	/users/authenticated	https://capstone-86p9.onrender.com
+20230814	13:57:51	a616194c-e739-4e72-8465-aac44b1482b3	GET	/users/authenticated	https://capstone-86p9.onrender.com
+20230814	13:57:55	eb484806-3790-4ca1-aeaa-3bc69be29756	OPTIONS	/users/login	https://capstone-86p9.onrender.com
+20230814	13:57:55	aeac5ce1-5c52-4a78-a3b6-fa8def861031	POST	/users/login	https://capstone-86p9.onrender.com
+20230814	13:57:56	1c866d7e-d082-46a1-839c-0bb2991bc2e7	OPTIONS	/courses/view-courses	https://capstone-86p9.onrender.com
+20230814	13:57:56	2cb098d2-81e6-4f13-90da-28feb37a13fc	GET	/courses/view-courses	https://capstone-86p9.onrender.com
+20230814	14:09:52	29745ea2-9189-4498-9c16-277dfc193d23	OPTIONS	/users/authenticated	https://nl.hideproxy.me
+20230814	14:09:52	40ab4895-1ab4-4bed-878c-172b9c2fbf3f	GET	/users/authenticated	https://nl.hideproxy.me
+20230814	14:11:27	9dceda94-daa7-4055-b733-b6df2fc05561	OPTIONS	/users/authenticated	https://de.hideproxy.me
+20230814	14:11:27	5be98b57-b832-462e-a538-3dd56b161018	GET	/users/authenticated	https://de.hideproxy.me
+20230814	14:16:57	8ff9c8db-528c-487f-ae86-172e5e29d60c	OPTIONS	/users/authenticated	https://capstone-86p9.onrender.com
+20230814	14:16:57	793351bd-1c32-4c86-b582-75261fceec8a	GET	/users/authenticated	https://capstone-86p9.onrender.com
+20230814	16:47:21	514ccde2-9546-4823-8585-3a48767a7a82	OPTIONS	/users/authenticated	https://capstone-86p9.onrender.com
+20230814	16:47:21	38c3f32c-bb61-4fad-9526-8be8f00a01ff	GET	/users/authenticated	https://capstone-86p9.onrender.com

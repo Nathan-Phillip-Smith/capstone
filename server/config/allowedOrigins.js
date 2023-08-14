@@ -3,6 +3,7 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:10000',
   'https://capstone-86p9.onrender.com',
+  'https://nathanphillipsmith.com/',
 ]
 
 module.exports = allowedOrigins
