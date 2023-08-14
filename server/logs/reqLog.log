@@ -39,3 +39,4 @@
 20230814	13:19:16	e6c481f6-5a7c-4552-a4c9-97c1d28528ab	GET	/users/students	http://localhost:5173
 20230814	13:19:16	782cb0cc-4409-453e-a16a-5b32d8f37da5	GET	/courses/view-courses	http://localhost:5173
 20230814	13:19:16	df039feb-c04f-471d-90f5-49f96f4c120b	GET	/users/students	http://localhost:5173
+20230814	13:20:57	d8711b37-1b0e-4a17-9bdd-c8df531e2c39	GET	/users/logout	http://localhost:5173
