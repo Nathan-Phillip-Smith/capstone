@@ -185,7 +185,7 @@ const StudentProfile = () => {
         <div className="table-responsive profile__courses profile__box">
           <div className="profile__available-search">
             <h2>Available Courses</h2>
-            <div>
+            <div className="profile__search-inputs">
               <label className="profile__search-label" htmlFor="courseId">
                 Search By Course ID:{' '}
               </label>
@@ -219,7 +219,9 @@ const StudentProfile = () => {
                 <tr>
                   <th scope="col">Course ID</th>
                   <th scope="col">Course Title</th>
-                  <th scope="col">Course Description</th>
+                  <th className="courseDescription" scope="col">
+                    Course Description
+                  </th>
                   <th scope="col">Room Number</th>
                   <th scope="col">Capacity</th>
                   <th scope="col">Credits</th>

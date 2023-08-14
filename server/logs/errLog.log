@@ -1,0 +1,2 @@
+20230814	13:18:44	2208ef02-9fb1-46a5-8ad1-c332c1cf02f3	SyntaxError: Unexpected token " in JSON at position 0	POST	/courses/edit-course	http://localhost:5173
+20230814	13:19:14	4e68253d-7bab-46ac-9b9c-b3a1c40b561f	SyntaxError: Unexpected token " in JSON at position 0	POST	/courses/edit-course	http://localhost:5173

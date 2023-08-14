@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const passport = require('passport')
+const logger = require('../middleware/logger')
 const passportConfig = require('../config/passport')
 const User = require('../models/User')
 const jwt = require('jsonwebtoken')
@@ -23,6 +24,7 @@ router.post('/register', async (req, res) => {
     req.body
   const duplicate = await User.findOne({ username }).lean().exec()
   if (duplicate) {
+    logger.error('Username is already taken')
     console.log(duplicate)
     return res.status(409).json({
       message: { msgBody: 'Username is already taken', msgError: true },
@@ -37,6 +39,7 @@ router.post('/register', async (req, res) => {
     !phone ||
     !address
   ) {
+    logger.error('All fields are required')
     return res
       .status(400)
       .json({ message: { msgBody: 'All fields are required', msgError: true } })
@@ -93,11 +96,13 @@ router.post('/register', async (req, res) => {
         .status(201)
         .json({ message: { msgBody: 'New user created', msgError: false } })
     } else {
+      logger.error('Invalid user data received')
       return res.status(400).json({
         message: { msgBody: 'Invalid user data received', msgError: true },
       })
     }
   } else {
+    logger.error(`Invalid Credentials`)
     return res.status(400).json({
       message: {
         msgBody: `Invalid Credentials`,
@@ -169,6 +174,7 @@ router.post(
         user,
       })
     } else {
+      logger.error(`No Student Found`)
       res.status(400).json({
         message: {
           msgBody: `No Student Found`,
@@ -186,6 +192,7 @@ router.get(
     if (req.user.roles.includes('admin')) {
       const students = await User.find().lean()
       if (!students?.length) {
+        logger.error(`No Students Found`)
         return res
           .status(400)
           .json({ message: { msgBody: 'No students found', msgError: true } })
@@ -195,6 +202,7 @@ router.get(
         students,
       })
     } else {
+      logger.error(`Unauthorized`)
       res.status(401).json({
         message: {
           msgBody: `Unauthorized`,
@@ -217,6 +225,7 @@ router.post('/edit-user', async (req, res) => {
     !phone ||
     !address
   ) {
+    logger.error('All fields are required')
     return res
       .status(400)
       .json({ message: { msgBody: 'All fields are required', msgError: true } })
@@ -226,6 +235,7 @@ router.post('/edit-user', async (req, res) => {
   const user = await User.findById(_id).exec()
 
   if (!user) {
+    logger.error('User not found')
     return res.status(400).json({ message: 'User not found' })
   }
 
@@ -233,6 +243,7 @@ router.post('/edit-user', async (req, res) => {
   const duplicate = await User.findOne({ username }).lean().exec()
   //   Allow updates to the original user
   if (duplicate && duplicate?._id.toString() !== _id) {
+    logger.error(`Username already taken`)
     return res.status(409).json({
       message: {
         msgBody: `Username already taken`,
@@ -274,6 +285,7 @@ router.post('/edit-user', async (req, res) => {
       },
     })
   } else {
+    logger.error(`Invalid Credentials`)
     return res.status(400).json({
       message: {
         msgBody: `Invalid Credentials`,
@@ -294,6 +306,7 @@ router.get(
         .status(200)
         .json({ message: { msgBody: 'You are an admin', msgError: false } })
     } else {
+      logger.error('You are not an admin')
       res
         .status(403)
         .json({ message: { msgBody: 'You are not an admin', msgError: true } })
@@ -320,6 +333,7 @@ router.delete(
 
       // Confirm data
       if (!id) {
+        logger.error('User Id required')
         return res
           .status(400)
           .json({ message: { msgBody: 'User Id required', msgError: true } })
@@ -329,6 +343,7 @@ router.delete(
       const user = await User.findById(id).exec()
 
       if (!user) {
+        logger.error('User not found')
         return res
           .status(400)
           .json({ message: { msgBody: 'User not found', msgError: true } })
@@ -340,6 +355,7 @@ router.delete(
 
       res.json({ message: { msgBody: reply, msgError: false } })
     } else {
+      logger.error('Unauthorized')
       res
         .status(400)
         .json({ message: { msgBody: 'Unauthorized', msgError: true } })

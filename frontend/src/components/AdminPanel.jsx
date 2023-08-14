@@ -341,7 +341,9 @@ const AdminPanel = () => {
                     <tr>
                       <th scope="col">Course ID</th>
                       <th scope="col">Course Title</th>
-                      <th scope="col">Course Description</th>
+                      <th className="courseDescription" scope="col">
+                        Course Description
+                      </th>
                       <th scope="col">Room Number</th>
                       <th scope="col">Capacity</th>
                       <th scope="col">Credits</th>

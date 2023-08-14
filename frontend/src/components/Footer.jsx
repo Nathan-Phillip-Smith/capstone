@@ -8,7 +8,7 @@ const HomeFooter = () => {
     <>
       <section className="home-footer__socials">
         <div>
-          <p>
+          <p className="home-footer__socials-text">
             Follow for the latest
             <span className="home-footer__bold">CPU news & events</span>
           </p>

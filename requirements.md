@@ -28,7 +28,7 @@
 26. [ ] Deploy application to render
 27. [ ] Make messages disappear
 28. [ ] Make messages appear above boxes and on delete student/course
-29. [ ] Local Storage clear on header buttons
+29. [x] Local Storage clear on header buttons
 
 # Rubric
 
@@ -71,8 +71,8 @@
 
 ### Logging: 5%
 
-23. [ ]Server correctly logs events
-24. [ ]Logs are useful for finding errors in application
+23. [x]Server correctly logs events
+24. [X]Logs are useful for finding errors in application
 
 ### Authentication System: 10%
 

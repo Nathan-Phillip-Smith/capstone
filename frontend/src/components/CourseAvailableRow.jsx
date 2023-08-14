@@ -3,7 +3,9 @@ const CourseAvailableRow = (props) => {
     <tr>
       <th>{props.course['Course ID']}</th>
       <td>{props.course['Course Title']}</td>
-      <td>{props.course['Course Description']}</td>
+      <td className="courseDescription">
+        {props.course['Course Description']}
+      </td>
       <td>{props.course['Classroom Number']}</td>
       <td>{props.course['Capacity']}</td>
       <td>{props.course['Credit Hours']}</td>

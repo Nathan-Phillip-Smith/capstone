@@ -226,7 +226,7 @@ const StudentDetails = () => {
         <div className="table-responsive profile__courses profile__box">
           <div className="profile__available-search">
             <h2>Available Courses</h2>
-            <div>
+            <div className="profile__search-inputs">
               <label className="profile__search-label" htmlFor="courseId">
                 Search By Course ID:{' '}
               </label>

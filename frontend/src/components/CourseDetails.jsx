@@ -9,7 +9,9 @@ const CourseDetails = (props) => {
           <tr>
             <th scope="col">Course ID</th>
             <th scope="col">Course Title</th>
-            <th scope="col">Course Description</th>
+            <th className="courseDescription" scope="col">
+              Course Description
+            </th>
             <th scope="col">Room Number</th>
             <th scope="col">Capacity</th>
             <th scope="col">Credits</th>
@@ -20,7 +22,9 @@ const CourseDetails = (props) => {
           <tr id={props.id}>
             <th>{course['Course ID']}</th>
             <td>{course['Course Title']}</td>
-            <td>{course['Course Description']}</td>
+            <td className="courseDescription">
+              {course['Course Description']}
+            </td>
             <td>{course['Classroom Number']}</td>
             <td>{course['Capacity']}</td>
             <td>{course['Credit Hours']}</td>

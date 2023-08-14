@@ -32,7 +32,7 @@
   --INPUT-INVALID: #f00;
 }
 
-/* || GENERAL STYLES */
+/* || HEADER / FOOTER || */
 
 /* HEADER */
 
@@ -95,101 +95,6 @@
   color: var(--TEXTCOLORALT);
 }
 
-/* HOME PAGE */
-
-body {
-  min-height: 100vh;
-  background-color: var(--COLOR);
-  color: var(--COLOR);
-}
-.home__banner-header {
-  height: 3rem;
-  background-color: var(--BGCOLORALT2);
-  border-bottom: solid 0.3rem var(--BGCOLOR);
-  box-shadow: inset 0 2px 10px -6px black;
-}
-.home__banner {
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 30rem;
-  padding: 0 0 7rem 0;
-}
-
-.home__banner::before {
-  content: '';
-  background-color: rgba(0, 0, 0, 0.838);
-  position: absolute;
-  background-image: url('../img/college.png');
-  background-size: cover;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background-position: 0 60%;
-  opacity: 0.2;
-}
-.home__banner h1 {
-  font-family: 'Quantico', sans-serif;
-  font-size: 6rem;
-  font-weight: 700;
-  color: var(--TEXTCOLOR);
-}
-.home__banner p {
-  padding: 0 2rem;
-  text-transform: uppercase;
-  font-size: 3rem;
-  color: var(--TEXTCOLORALT);
-  background-color: var(--BGCOLOR);
-}
-
-.home__divider {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 4rem 20rem 0;
-}
-.home__divider-line {
-  width: 100%;
-  border-bottom: solid 0.1rem var(--BGCOLOR);
-  margin-bottom: 1.4rem;
-}
-.home__divider-text {
-  color: var(--TEXTCOLOR);
-  margin: 0 1rem;
-  text-transform: uppercase;
-  text-align: center;
-}
-.home__about {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  color: var(--TEXTCOLOR);
-  margin: 4rem 8rem;
-}
-.home__about-img {
-  width: 100%;
-}
-.home__about-lorem {
-  width: 20rem;
-  font-size: 1.5rem;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  padding-bottom: 2rem;
-}
-.home__about-text {
-  padding: 0 1rem;
-}
-.home__about-img-title {
-  color: var(--TEXTCOLOR);
-  font-size: 1.5rem;
-  font-family: sans-serif;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 2rem 0;
-}
-
 /* FOOTER */
 
 .home-footer__socials {
@@ -234,6 +139,9 @@ body {
   background-size: cover;
   margin: 0 0 4rem 0;
 }
+.home-footer__socials-text {
+  text-align: center;
+}
 
 .home-footer {
   display: flex;
@@ -245,7 +153,108 @@ body {
 }
 .home-footer__address {
   margin-bottom: 2rem;
+  text-align: center;
   color: var(--TEXTCOLORALT);
+}
+
+/* || PAGES || */
+
+/* HOME PAGE */
+
+body {
+  min-height: 100vh;
+  background-color: var(--COLOR);
+  color: var(--COLOR);
+}
+.home__banner-header {
+  height: 3rem;
+  background-color: var(--BGCOLORALT2);
+  border-bottom: solid 0.3rem var(--BGCOLOR);
+  box-shadow: inset 0 2px 10px -6px black;
+}
+.home__banner {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 30rem;
+  padding: 0 0 7rem 0;
+}
+
+.home__banner::before {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.838);
+  position: absolute;
+  background-image: url('../img/college.png');
+  background-size: cover;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-position: 0 60%;
+  opacity: 0.2;
+}
+.home__banner h1 {
+  font-family: 'Quantico', sans-serif;
+  text-align: center;
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--TEXTCOLOR);
+}
+.home__banner p {
+  padding: 0 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3rem;
+  color: var(--TEXTCOLORALT);
+  background-color: var(--BGCOLOR);
+}
+
+.home__divider {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 4rem 20rem 0;
+}
+.home__divider-line {
+  width: 100%;
+  border-bottom: solid 0.1rem var(--BGCOLOR);
+  margin-bottom: 1.4rem;
+}
+.home__divider-text {
+  color: var(--TEXTCOLOR);
+  margin: 0 1rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+.home__about {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: var(--TEXTCOLOR);
+  margin: 4rem 8rem;
+}
+.home__about-img {
+  width: 100%;
+}
+.home__about-lorem {
+  width: 20rem;
+  font-size: 1.5rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+.home__about-text {
+  padding: 0 1rem;
+}
+.home__about-img-title {
+  color: var(--TEXTCOLOR);
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 2rem 0;
 }
 
 /* REGISTER PAGE */
@@ -375,6 +384,8 @@ body {
   white-space: nowrap;
 }
 
+/* || OTHER / GENERAL STYLES || */
+
 /* FORMS */
 
 .form {
@@ -425,4 +436,141 @@ select {
 
 a {
   text-decoration: none;
+}
+
+/* <||> MEDIA QUERIES FOR ALL CSS <||> */
+
+/* || HEADER / FOOTER || */
+
+/* HEADER */
+
+@media screen and (max-width: 996px) {
+  .home-header {
+    background-color: var(--COLOR);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+  }
+  .home-header__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 1rem 1rem;
+  }
+}
+
+/* || PAGES || */
+
+/* HOME PAGE */
+
+@media screen and (max-width: 996px) {
+  .home__banner {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 30rem;
+    padding: 4rem 0 7rem 0;
+  }
+  .home__divider {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2rem 4rem 1rem;
+  }
+  .home__about {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: var(--TEXTCOLOR);
+    margin: 0 2rem 1rem;
+  }
+  .home__about-img {
+    width: 100%;
+    height: 7rem;
+    background-size: cover;
+  }
+  .home__about-lorem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 8rem;
+    margin: 1rem;
+  }
+  .home__about-text {
+    display: none;
+  }
+  .home__about-img-title {
+    font-size: 1rem;
+    margin: 1rem 0 0 0;
+  }
+}
+
+/* STUDENT PROFILE PAGE */
+
+@media screen and (max-width: 996px) {
+  .profile__student-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+  }
+  .profile__student-info h1 {
+    display: none;
+  }
+  .profile__totals p {
+    margin: 0.5rem;
+    text-align: center;
+  }
+  .profile__box {
+    border: 0.2rem solid var(--BGCOLOR);
+    box-shadow: inset rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1rem;
+    margin: 1rem;
+  }
+  .profile__available-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .profile__search-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+  }
+  .courseDescription {
+    display: none;
+  }
+}
+
+/* ADMIN PANEL PAGE */
+
+@media screen and (max-width: 996px) {
+  .admin__admin-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+  }
+  .admin__box {
+    border: 0.2rem solid var(--BGCOLOR);
+    box-shadow: inset rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1rem;
+    margin: 1rem;
+  }
+  .admin__search-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: right;
+  }
+  .admin__search-bar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: bottom;
+  }
 }
