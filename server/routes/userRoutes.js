@@ -46,7 +46,7 @@ router.post('/register', async (req, res) => {
   }
 
   const USER_REGEX = /^[A-z]{3,20}$/
-  const PWD_REGEX = /^[A-z]{3,20}$/
+  const PWD_REGEX = /^[A-z]{4,20}$/
   const FNAME_REGEX = /^[A-z]{1,20}$/
   const LNAME_REGEX = /^[A-z]{1,20}$/
   const EMAIL_REGEX = /^[A-z0-9!@#$%.-_]{7,50}$/
