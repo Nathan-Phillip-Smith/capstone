@@ -35,6 +35,9 @@ app.use(cookieParser())
 app.use('/', express.static(path.join(__dirname, '../frontend/dist')))
 app.use('/users', require('./routes/userRoutes'))
 app.use('/courses', require('./routes/courseRoutes'))
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'))
+})
 app.use(errorHandler)
 
 mongoose.connection.once('open', () => {
