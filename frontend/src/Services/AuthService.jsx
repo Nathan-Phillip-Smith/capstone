@@ -1,6 +1,6 @@
 export default {
   login: async (user) => {
-    const response = await fetch('http://localhost:3500/users/login', {
+    const response = await fetch('/users/login', {
       method: 'post',
       body: JSON.stringify(user),
       headers: {
@@ -18,7 +18,7 @@ export default {
       }
   },
   register: async (user) => {
-    const response = await fetch('http://localhost:3500/users/register', {
+    const response = await fetch('/users/register', {
       method: 'post',
       body: JSON.stringify(user),
       headers: {
@@ -34,7 +34,7 @@ export default {
       }
   },
   logout: () => {
-    return fetch('http://localhost:3500/users/logout', {
+    return fetch('/users/logout', {
       method: 'get',
       credentials: 'include',
     })
@@ -42,7 +42,7 @@ export default {
       .then((data) => data)
   },
   isAuthenticated: async () => {
-    const response = await fetch('http://localhost:3500/users/authenticated', {
+    const response = await fetch('/users/authenticated', {
       method: 'get',
       credentials: 'include',
     })

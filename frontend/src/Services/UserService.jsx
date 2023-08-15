@@ -1,6 +1,6 @@
 export default {
   getUser: async () => {
-    const response = await fetch('http://localhost:3500/users/student', {
+    const response = await fetch('/users/student', {
       method: 'get',
       credentials: 'include',
     })
@@ -9,7 +9,7 @@ export default {
     } else return { message: { msgBody: 'Unauthorized', msgError: true } }
   },
   getUserFromId: async (user) => {
-    const response = await fetch('http://localhost:3500/users/student-id', {
+    const response = await fetch('/users/student-id', {
       method: 'post',
       body: JSON.stringify(user),
       headers: {
@@ -23,7 +23,7 @@ export default {
   },
 
   editUser: async (user) => {
-    const response = await fetch('http://localhost:3500/users/edit-user', {
+    const response = await fetch('/users/edit-user', {
       method: 'post',
       body: JSON.stringify(user),
       headers: {
@@ -37,7 +37,7 @@ export default {
   },
 
   getStudents: async () => {
-    const response = await fetch('http://localhost:3500/users/students', {
+    const response = await fetch('/users/students', {
       method: 'get',
       credentials: 'include',
     })
@@ -46,7 +46,7 @@ export default {
     } else return { message: { msgBody: 'Unauthorized', msgError: true } }
   },
   deleteUser: async (data) => {
-    const response = await fetch('http://localhost:3500/users/delete-User', {
+    const response = await fetch('/users/delete-User', {
       method: 'delete',
       body: JSON.stringify(data),
       headers: {
