@@ -5,3 +5,4 @@
 20230814	14:11:27	b42e3e18-a5fa-43e6-9b42-164d92bc6402	Error: Not allowed by CORS	OPTIONS	/users/authenticated	https://de.hideproxy.me
 20230814	14:11:27	90e1ef69-68ab-427d-8c64-22c544728b26	Error: Not allowed by CORS	GET	/users/authenticated	https://de.hideproxy.me
 20230814	19:19:30	4cc72fc9-2f6e-4c48-8381-36dda93482f8	Error: ENOENT: no such file or directory, stat '/Users/nathansmith/Desktop/capstone/server/client/build/index.html'	GET	/student-profile	undefined
+20230815	08:15:23	12ba71da-65f7-4fb3-8626-a350207e774d	Error: ENOENT: no such file or directory, stat '/Users/nathansmith/Desktop/finishedProjects/capstone/frontend/dist/index.html'	GET	/	undefined
